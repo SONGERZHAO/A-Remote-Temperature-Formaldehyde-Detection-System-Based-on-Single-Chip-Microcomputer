@@ -1,0 +1,7 @@
+"main.obj",
+"ESP8266.obj",
+"tem.obj",
+"ZE08.obj",
+"LCD1602.obj" 
+TO "test" 
+RAMSIZE(256) 

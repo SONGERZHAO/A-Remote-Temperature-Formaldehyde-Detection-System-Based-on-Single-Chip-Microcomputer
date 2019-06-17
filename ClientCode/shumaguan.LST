@@ -1,0 +1,95 @@
+C51 COMPILER V9.01   SHUMAGUAN                                                             05/25/2019 19:09:36 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE SHUMAGUAN
+OBJECT MODULE PLACED IN shumaguan.OBJ
+COMPILER INVOKED BY: D:\Èí¼ş\keil4\keil4\C51\BIN\C51.EXE shumaguan.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "shumaguan.h"
+   2          uchar code smgduan[10] = {0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f};
+   3          void delay(uint i)
+   4          {
+   5   1              while(i--);     
+   6   1      }
+   7          void DisPlay(uchar dat,uchar i)
+   8          {
+   9   1              switch(i)
+  10   1              {
+  11   2                      case(0):
+  12   2                              LSA=0;LSB=0;LSC=0;break;
+  13   2                      case(1):
+  14   2                              LSA=1;LSB=0;LSC=0;break;
+  15   2                      case(2):
+  16   2                              LSA=0;LSB=1;LSC=0;break;
+  17   2                      case(3):
+  18   2                              LSA=1;LSB=1;LSC=0;break;
+  19   2                      case(4):
+  20   2                              LSA=0;LSB=0;LSC=1;break;
+  21   2                      case(5):
+  22   2                              LSA=1;LSB=0;LSC=1;break;
+  23   2                      case(6):
+  24   2                              LSA=0;LSB=1;LSC=1;break;
+  25   2                      case(7):
+  26   2                              LSA=1;LSB=1;LSC=1;break; 
+  27   2              }
+  28   1              if(i==2)
+  29   1                      P0 = smgduan[dat]|0x80;
+  30   1              else
+  31   1                      P0 = smgduan[dat];
+  32   1      //      if(dat == 20)
+  33   1      //              P0 = 0x40;
+  34   1      //      else
+  35   1      //      {
+  36   1      //              if(dat > 9 || dat < 0)
+  37   1      //                      P0 = 0x40;
+  38   1      //              P0 = smgduan[dat];
+  39   1      //      }
+  40   1      
+  41   1      //      switch(dat)
+  42   1      //      {
+  43   1      //              case(0):
+  44   1      //                      P0 = smgduan[0];break;
+  45   1      //              case(1):
+  46   1      //                      P0 = smgduan[1];break;
+  47   1      //              case(2):
+  48   1      //                      P0 = smgduan[2];break;
+  49   1      //              case(3):
+  50   1      //                      P0 = smgduan[3];break;
+  51   1      //              case(4):
+  52   1      //                      P0 = smgduan[4];break;
+  53   1      //              case(5):
+  54   1      //                      P0 = smgduan[5];break;
+  55   1      //              case(6):
+C51 COMPILER V9.01   SHUMAGUAN                                                             05/25/2019 19:09:36 PAGE 2   
+
+  56   1      //                      P0 = smgduan[6];break;
+  57   1      //              case(7):
+  58   1      //                      P0 = smgduan[7];break;
+  59   1      //              case(8):
+  60   1      //                      P0 = smgduan[8];break;
+  61   1      //              case(9):
+  62   1      //                      P0 = smgduan[9];break;
+  63   1      //              default:
+  64   1      //                      P0 = 0x40;
+  65   1      //      }
+  66   1              
+  67   1              delay(100);
+  68   1              P0 = 0x00;
+  69   1      
+  70   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    121    ----
+   CONSTANT SIZE    =     10    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
